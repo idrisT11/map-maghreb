@@ -1,7 +1,9 @@
 window.onload = ()=>{
 
     mapAlgeria = new Map(Map.ALGERIA_ANGLE_MAP);
-    
-    mapAlgeria.load();
+
+    let val = await mapAlgeria.load();
+
+    console.log(val);
 
 }

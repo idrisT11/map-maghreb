@@ -47,7 +47,7 @@ class Map{
         }
 
 
-        fetch(this.src)
+       return fetch(this.src)
         .then(
             response => response.text()
         )
@@ -62,7 +62,8 @@ class Map{
         })
         .catch((error)=>{
             console.error("An error has occured while fetching the map on the server");
-        })
+        });
+
     }
 
 
