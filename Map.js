@@ -51,8 +51,14 @@ class Map{
         .then(
             response => response.text()
         )
-        .then(svg=>{
-            console.log(svg);
+        .then(rawSvg=>{
+            console.log(rawSvg);
+            var parser = new DOMParser();
+            var svgMap = parser.parseFromString(rawSvg, "image/svg+xml");
+
+            let wilayas = svgMap.getElementsByClassName('wilaya');
+
+            console.log(wilayas);
         })
         .catch((error)=>{
             console.error("An error has occured while fetching the map on the server");
