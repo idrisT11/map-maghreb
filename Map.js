@@ -15,7 +15,7 @@ class Map{
 
 
     getSourceFromRef(ref){
-        let path = './SVG_MAP/';
+        let path = './SVG_MAPS/';
 
         
         switch (ref) {
