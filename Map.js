@@ -37,7 +37,7 @@ class Map{
     }
 
 
-    load(){
+    async load(){
         let container = document.getElementById('MAP_LOADER');
 
         if (container == null) {
@@ -46,9 +46,15 @@ class Map{
             return;
         }
 
-        fetch(this.src).then((response)=>{
-            console.log(response);
-        }).catch((error)=>{
+
+        fetch(this.src)
+        .then(
+            response => response.text()
+        )
+        .then(svg=>{
+            console.log(svg);
+        })
+        .catch((error)=>{
             console.error("An error has occured while fetching the map on the server");
         })
     }
